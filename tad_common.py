@@ -1,3 +1,18 @@
+"""
+Common classes, functions and constants of tweets-as-datasets
+
+JSONStorage - storage in json
+Tweet - abstraction of a tweet
+
+load_credentials - load twitter credentials
+load_topics - load topics from the config file
+
+LANG - language to filter tweets
+LOG_LEVELS - logging levels
+
+Author: Steven Ortiz
+"""
+
 import logging
 
 from os.path import isfile

@@ -26,13 +26,6 @@ from tad_common import LOG_LEVELS, LANG, JSONStorage, Tweet, \
 
 CREDENTIALS = dict()
 
-LOG_LEVELS = {
-        'DEBUG': logging.DEBUG,
-        'INFO': logging.INFO,
-        'WARNING': logging.WARNING,
-        'ERROR': logging.ERROR,
-        'CRITICAL': logging.CRITICAL
-        }
 
 USAGE = """
 Usage:
@@ -107,8 +100,6 @@ class TopicMiner(object):
                     self.logger.info('Retrieved {0} statuses with query {1}'\
                             ''.format(len(query_tweets), query))
                     break  # No more results when next_results does not exist
-                # Create a dictionary from next_results:
-                # ?max_id=313519052523986943&q=NCAA&include_entities=1
                 kwargs = dict([kv.split('=') for kv in next_results[1:].split("&")])
                 results = self._t_api.search.tweets(**kwargs)
                 query_tweets += [Tweet(status) for status in results['statuses']]
